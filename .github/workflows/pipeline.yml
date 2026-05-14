@@ -1,18 +1,22 @@
 name: Pipeline Python
 on:
- push:
- pull_request:
+  push:
+  pull_request:
+
 jobs:
- teste:
- runs-on: ubuntu-latest
- steps:
- - name: Baixar código
- uses: actions/checkout@v4
- - name: Configurar Python
- uses: actions/setup-python@v5
- with:
- python-version: '3.11'
- - name: Executar script
- run: python calculadora.py
- - name: Executar teste
- run: python teste.pygit 
+  teste:                          # ← 2 espaços
+    runs-on: ubuntu-latest        # ← 4 espaços
+    steps:                        # ← 4 espaços
+      - name: Baixar código       # ← 6 espaços
+        uses: actions/checkout@v4 # ← 8 espaços
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:                     # ← 8 espaços
+          python-version: '3.11'  # ← 10 espaços
+
+      - name: Executar script
+        run: python calculadora.py
+
+      - name: Executar teste
+        run: python teste.py
