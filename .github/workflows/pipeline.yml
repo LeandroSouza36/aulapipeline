@@ -16,7 +16,7 @@ jobs:
           python-version: '3.11'  # ← 10 espaços
 
       - name: Executar script
-        run: python calculadora.py
+        run: python par.py
 
       - name: Executar teste
         run: python teste.py
